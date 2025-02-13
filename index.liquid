@@ -3,5 +3,24 @@ layout: layout.liquid
 title: 11ty Boilerplate
 ---
 
-<h1>Yet Another 11ty <strong>Boilerplate</strong></h1>
-<img alt="pine" src="/images/pine.png" width="50" />
+<h1>Planetary Playing Cards</h1>
+<div class="grid-container">
+<!-- Sun Card -->
+    <div class="card sun">
+        <div class="sun-logo"></div>
+        Sun
+        <div class="sun distance">1 AU</div>
+    </div>
+
+    <!-- Display planet cards without looping -->
+    <!-- Values and colours from Deepseek using prompt - give distance to all planets from earth -->
+    {% card "Mercury", 0.61, "e5e5e5" %}
+    {% card "Venus", 0.28, "f5deb3" %}
+    {% card "Earth", 1, "00aaff" %}
+    {% card "Mars", 0.52, "ff4500" %}
+    {% card "Jupiter", 4.2, "ffd700" %}
+    {% card "Saturn", 9.58, "daa520" %}
+    {% card "Uranus", 18.21, "afeeee" %}
+    {% card "Neptune", 29.09, "4169e1" %}
+
+</div>

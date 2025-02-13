@@ -1,50 +1,72 @@
 body {
-    font-family: Helvetica, sans-serif;
-    color: #EAE8FF;
-    background: #2D3142;
-    padding: 0 40px;
-    text-align: center;
-}
-
-nav {
-    margin: 40px auto 0 auto;
-    width: 250px;
-    border-radius: 50px;
-    background: #212431;
-}
-
-nav ul {
-    display: flex;
-    justify-content: space-evenly;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li {
-    list-style-type: none;
-    margin: 0;
-}
-
-nav ul li a {
-    display: inline-block;
-    padding: 20px;
-    color: #EAE8FF;
-    text-decoration: none;
-    font-size: 1.2em;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #dfdfdf;
+  background: #001f32;
+  padding: 0 40px;
+  text-align: center;
 }
 
 h1 {
-    font-size: 8em;
-    letter-spacing: -2px;
+  font-size: 3rem;
+  color: #9ccddc;
 }
 
-h1 strong {
-    background: rgb(34,193,195);
-    background: linear-gradient(45deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+.grid-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr; /* First column is twice the size of others */
+  grid-template-rows: 1fr 1fr; /* Two rows */
+  gap: 50px; /* Space between cards */
+  height: 75vh; /* Full viewport height */
+  padding: 10px; /* Optional padding */
 }
 
-img.about {
-    opacity: 0.5;
+.card {
+  background-color: #001825;
+  border: 5px solid;
+  border-radius: 24px;
+  border-image: linear-gradient(45deg, #062c43, #ced7e0) 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5em;
+  gap: 20px;
+}
+
+.sun {
+  grid-column: 1 / 2; /* Occupies the first column */
+  grid-row: 1 / 3; /* Spans both rows */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sun-logo {
+  width: 200px;
+  height: 200px;
+  background: #ffdd50;
+  border-radius: 50%;
+  animation: shine 4s ease-in-out infinite;
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+  /* background: linear-gradient(63deg, #999 23%, transparent 23%) 7px 0,
+    linear-gradient(63deg, transparent 74%, #999 78%),
+    linear-gradient(63deg, transparent 34%, #999 38%, #999 58%, transparent 62%),
+    #444;
+  background-size: 16px 48px; */
+  border-radius: 50%;
+}
+
+@keyframes shine {
+  50% {
+    box-shadow: 0 0 10px #ffdd50, 0 0 30px #ffdd50, 0 0 100px #ffdd50;
+  }
+}
+
+.card:hover {
+  transform: scale(1.05);
+  transition: transform 0.5s ease-in-out;
 }
